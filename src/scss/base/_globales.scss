@@ -1,0 +1,33 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 100vh;
+}
+body {
+    min-height: 100%;
+    @include m.tablet {
+        height: 100%;
+    }
+    display: flex;
+    flex-direction: column;
+    background-color: v.$blanco;
+    color: v.$blanco;
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+

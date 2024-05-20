@@ -1,0 +1,112 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.auth {
+    background-color: darken(v.$gris-oscuro, 40%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    
+    
+    &__nombre-pagina {
+        display: block;
+        font-weight: v.$bold;
+        text-align: center;
+        font-size: 3rem;
+        margin: 2rem;
+        color: v.$blanco;
+    }
+
+    &__contenedor {
+        @include m.contenedor-sm;
+        
+
+        &-crear {
+            @include m.contenedor-md;
+        }
+    }
+    
+    &__formulario {
+        background-color: darken(v.$azul, 10%);
+        padding: 4rem 4rem 2rem 4rem;
+        border-radius: 2rem;
+        border: 2px solid v.$gris-oscuro;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        text-align: center;
+
+        &--campo {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            // @include m.tablet {
+            //     display: block;
+            // }
+
+            label {
+                flex: 0 0 12rem;
+                font-size: 2rem;
+                color: v.$blanco;
+                text-align: right;
+            }
+            input {
+                width: 100%;
+                padding: .6rem;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid darken(v.$gris-oscuro, 20%);
+                background-color: transparent;
+                color: v.$blanco;
+                font-size: 1.8rem;
+
+                &:hover {
+                    border-bottom: 2px solid v.$gris-claro;
+                }
+
+                &::placeholder {
+                    color: darken(v.$gris-oscuro, 20%);
+                }
+            }
+
+            select,
+            textarea {
+                padding: .4rem;
+                background-color: v.$gris-claro;
+                border-radius: .5rem;
+                width: 100%;
+                outline: none;
+                resize: none;
+            }
+
+            select {
+                cursor: pointer;
+            }
+        }
+
+        &--boton {
+            @include m.boton(v.$celeste, v.$blanco);
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+
+    &__acciones {
+        margin: 2rem;
+        display: flex;
+        gap: 5rem;
+        justify-content: space-around;
+        font-weight: v.$regular;
+
+        @include m.telefono {
+            text-align: center;
+        }
+
+        &--a {
+            color: v.$blanco;
+        }
+    }
+}

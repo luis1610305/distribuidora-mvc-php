@@ -1,0 +1,226 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.pedidos {
+
+    &__index {
+        @include m.contenedor;
+    }
+
+    &__table {
+        color: v.$negro;
+        @include m.contenedor-md;
+
+        &--thead {
+
+            tr {
+                background-color: v.$negro;
+                color: v.$blanco;
+
+                th {
+                    padding: 1rem;
+                }
+
+            }
+        }
+
+        &--tbody {
+            tr {
+                td {
+                    padding: 1rem;
+                    text-align: center;
+                    border: 1px solid v.$negro;
+                }
+            }
+
+            .table__body--acciones {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        &--tfoot {
+            tr {
+                background-color: v.$gris-oscuro;
+                color: v.$blanco;
+
+                td {
+                    padding: 1rem;
+                    text-align: center;
+                    font-weight: 700;
+                }
+
+            }
+        }
+    }
+
+    &__crear {
+        @include m.contenedor-xl;
+    }
+
+    &__a {
+        @include m.boton(v.$naranja, v.$blanco);
+    }
+
+    &__form {
+        background-color: v.$gris-claro;
+        border-radius: .5rem;
+        padding: 2rem;
+        text-align: center;
+
+        &--campoBox {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+
+            .pedidos__form--campo {
+                display: flex;
+                gap: .8rem;
+                align-items: center;
+                margin-bottom: 1.4rem;
+
+                label {
+                    flex: 0 0 4rem;
+                    text-align: right;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+
+                input,
+                select {
+                    width: 100%;
+                    padding: .6rem;
+                    border-radius: .5rem;
+                    outline: none;
+                    background-color: v.$gris-claro;
+                    font-weight: 700;
+                    text-align: center;
+                }
+
+                select {
+                    background-color: lighten(v.$gris-claro, 20%);
+                    cursor: pointer;
+                }
+
+                .plus,
+                .minus {
+                    background-color: v.$naranja;
+                    padding: .6rem;
+                    border-radius: .5rem;
+                    cursor: pointer;
+                    font-size: 2rem;
+                }
+    
+                .minus {
+                    background-color: v.$azul;
+                }
+            }
+
+        }
+
+
+        &--table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+
+            .form__table--thead {
+
+                tr {
+                    background-color: v.$negro;
+                    color: v.$blanco;
+
+                    th {
+                        padding: 1rem;
+
+                        &:nth-child(1) {
+                            width: 12%;
+                        }
+
+                        &:nth-child(2) {
+                            width: 38%;
+                        }
+
+                        &:nth-child(3) {
+                            width: 12%;
+                        }
+
+                        &:nth-child(4) {
+                            width: 13%;
+                        }
+
+                        &:nth-child(5) {
+                            width: 10%;
+                        }
+
+                        &:nth-child(6) {
+                            width: 15%;
+                        }
+                    }
+
+                }
+            }
+
+            .form__table--tbody {
+                tr {
+                    td {
+                        text-align: center;
+                        word-wrap: break-word;
+                        border: 1px solid v.$negro;
+                        
+                        input {
+                            padding: 1rem;
+                            width: 100%;
+                            text-align: center;
+                            outline: none;
+                            border: none;
+                            font-weight: 700;
+                            color: v.$negro;
+                        }
+
+                        input[type=number]::-webkit-inner-spin-button,
+                        input[type=number]::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            .form__table--tfoot {
+                tr {
+                    background-color: v.$gris-oscuro;
+                    color: v.$blanco;
+
+                    td {
+                        padding: 1rem;
+                        text-align: center;
+                        font-weight: 700;
+
+                        input {
+                            width: 100%;
+                            text-align: center;
+                            border: none;
+                            font-weight: 700;
+                            color: v.$blanco;
+                            background-color: transparent;
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+        &--boton {
+            @include m.boton(v.$azul, v.$blanco);
+            margin: 0;
+            margin-top: 1rem;
+        }
+    }
+}

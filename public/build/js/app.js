@@ -1,0 +1,1 @@
+function iniciarApp(){agregarCampos()}function agregarCampos(){const e=document.querySelector(".boton-agregar");document.querySelector(".pedidos-campo");e.addEventListener("click",(function(){}))}document.addEventListener("DOMContentLoaded",(function(){iniciarApp()}));

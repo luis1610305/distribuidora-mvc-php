@@ -1,0 +1,48 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+}
+
+.imagen {
+    background-image: url(../img/La-Granja-Real-Food-Chicken-1-Pollo-a-la-Brasa.png);
+    background-position: center center;
+    background-size: cover;
+    height: 25rem;
+
+    @include m.tablet {
+        height: 100vh;
+    }
+}
+
+.app {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 100vh;
+
+    @include m.tablet {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-right: 0;
+
+        &::-webkit-scrollbar {
+            width: 0.9rem;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background-color: rgb(0, 0, 0);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.829);
+            border-radius: 5px;
+        }
+
+    }
+}

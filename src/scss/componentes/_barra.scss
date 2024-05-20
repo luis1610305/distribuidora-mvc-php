@@ -1,0 +1,32 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.barra {
+
+    &__index {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4rem;
+
+        &--botones {
+            display: flex;
+            gap: 2rem;
+
+            a {
+                @include m.boton(v.$naranja, v.$blanco);
+            }
+        }
+
+        &--buscador {
+
+            input {
+                font-size: 1.8rem;
+                outline: none;
+                padding: 1rem;
+                width: 40rem;
+                border-radius: .5rem;
+            }
+        }
+    }
+}
